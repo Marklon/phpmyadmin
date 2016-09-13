@@ -1,0 +1,45 @@
+# Source 
+# https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-with-apache-on-a-centos-7-server
+
+# Source 
+
+
+# Source 
+
+
+
+
+$ yum install epel-release
+$ yum check-update
+$ yum -y install phpmyadmin
+# After installation, Open /etc/httpd/conf.d/phpMyAdmin.conf
+
+# Find the line below
+ # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+     
+     
+  # Comment out the following lines below
+     
+     # Apache 2.4
+    <RequireAny>
+      # Require ip 127.0.0.1
+      # Require ip ::1
+      Require all granted
+    </RequireAny>
+
+# You can login to the url below
+
+# http://server_domain_or_IP/phpMyAdmin
+
+# You can set the login from th eterminal with
+
+$ mysql_secure_installation
+$
+$
+$
+$
+$
