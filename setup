@@ -2,15 +2,28 @@
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-with-apache-on-a-centos-7-server
 
 # Source 
-
+http://www.krizna.com/centos/install-phpmyadmin-centos-7/
 
 # Source 
+http://www.krizna.com/centos/install-lamp-server-centos-7/
 
 
 
 
 $ yum install epel-release
+
 $ yum check-update
+
+$ yum install php
+
+$ yum install php-mysql
+
+$ yum install php-gd
+
+$ yum install  php-pear
+
+$ yum install php-mbstring
+
 $ yum -y install phpmyadmin
 # After installation, Open /etc/httpd/conf.d/phpMyAdmin.conf
 
@@ -22,7 +35,7 @@ $ yum -y install phpmyadmin
      </RequireAny>
      
      
-  # Comment out the following lines below
+  # Comment out the following lines below & add Require all granted
      
      # Apache 2.4
     <RequireAny>
@@ -31,13 +44,14 @@ $ yum -y install phpmyadmin
       Require all granted
     </RequireAny>
 
-# You can login to the url below
+# You can set the login from the terminal with
+$ mysql_secure_installation
 
+
+# You can login to the url below
 # http://server_domain_or_IP/phpMyAdmin
 
-# You can set the login from th eterminal with
 
-$ mysql_secure_installation
 $
 $
 $
